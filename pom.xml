@@ -44,5 +44,6 @@
 		<module>eureka_server_13000</module>
 		<module>eureka_server_13001</module>
 		<module>provider_server_11001</module>
+		<module>gateway_server_14000</module>
 	</modules>
 </project>
