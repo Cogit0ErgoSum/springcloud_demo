@@ -6,6 +6,18 @@ spring:    application:      name: config-server
     cloud:        config:          server:
               git: 
                   uri: https://gitee.com/Cogit0ErgoSum/scc-test.git
+                  
+    rabbitmq:
+        host: 127.0.0.1
+        port: 5672
+        username: guest
+        password: guest
+        
+management:
+    endpoint:
+        web:
+          exposure:
+              include: bus-refresh
            
 eureka:
     client:
