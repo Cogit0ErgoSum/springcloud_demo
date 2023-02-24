@@ -1,0 +1,22 @@
+spring:
+    cloud:
+        config:
+            name: provider_server_11000   #应用名称，对应git文件名前半部分
+            profile: dev                  #开发环境名称，对应git文件名后半部分
+            label: master                 #分支
+            #uri: http://localhost:15000   #config server请求地址 
+            discovery:                     #从Eureka中获取config server信息
+                enabled: true              #开启服务发现
+                service-id: config-server
+            
+eureka:
+    client:
+        service-url:
+            defaultZone: http://eurekaServer13000:13000/eureka/,http://eurekaServer13001:13001/eureka/
+            
+    instance:
+        prefer-ip-address: true
+        instance-id: ${spring.cloud.client.ip-address}:${server.port}
+        lease-renewal-interval-in-seconds: 5
+        lease-expiration-duration-in-seconds: 15
+            
